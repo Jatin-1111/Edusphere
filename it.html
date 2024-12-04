@@ -7,54 +7,72 @@
     <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="stylesheet" href="/css/it.css" />
     <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <!-- <link rel="stylesheet" href="css/footer.css" /> -->
+    <link rel="stylesheet" href="/css/footer-it.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a href="index.html" class="name">EDUSPHERE</a>
-      <div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="content.html">Content</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="content-container">
-      <div class="it-container">
-        <h2>IT Content</h2>
-        <button onclick="openDialog()">Select Semester and Subject</button>
-      </div>
-      <!-- Dialog Box -->
-      <div id="selectionDialog" class="modal">
-        <div class="modal-content">
-          <span class="close-btn" onclick="closeDialog()">&times;</span>
-          <h2>Select Your Semester and Subject</h2>
-          <form id="selectionForm">
-            <label for="semester">Select Semester:</label>
-            <select id="semester" name="semester" onchange="updateSubjects()">
-              <option value="" disabled selected>Choose a semester</option>
-              <option value="1">Semester 1</option>
-              <option value="2">Semester 2</option>
-            </select>
+    <div class="page-container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="index.html" class="name">EDUSPHERE</a>
+        <div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="content.html">Content</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
 
-            <label for="subject">Select Subject:</label>
-            <select id="subject" name="subject">
-              <option value="" disabled selected>Choose a subject</option>
-            </select>
+      <div class="content-container">
+        <div class="it-container">
+          <h2>IT Content</h2>
+          <h3>Explore the best resources for your IT journey!</h3>
+          <button onclick="openDialog()">
+            Select Semester, Subject and Chapter
+          </button>
+        </div>
 
-            <button type="button" onclick="submitForm()">Submit</button>
-          </form>
+        <div id="selectionDialog" class="modal">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeDialog()">&times;</span>
+            <h2>Select Your Semester, Subject, and Chapter</h2>
+            <form id="selectionForm">
+              <label for="semester">Select Semester:</label>
+              <select id="semester" name="semester" onchange="updateSubjects()">
+                <option value="" disabled selected>Choose a semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+              </select>
+
+              <label for="subject">Select Subject:</label>
+              <select id="subject" name="subject" onchange="updateChapters()">
+                <option value="" disabled selected>Choose a subject</option>
+              </select>
+
+              <label for="chapter">Select Chapter:</label>
+              <select id="chapter" name="chapter">
+                <option value="" disabled selected>Choose a chapter</option>
+              </select>
+
+              <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Content Display Section -->
+        <div id="contentDisplay" class="content-display">
+          <!-- Dynamically added content will be displayed here -->
         </div>
       </div>
     </div>
-
     <footer class="footer">
       <div class="footer-container">
         <!-- About Edusphere Section -->
