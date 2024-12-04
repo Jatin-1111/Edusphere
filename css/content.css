@@ -6,6 +6,10 @@
     font-family: "Parkinsans", sans-serif;
 }
 
+body {
+    background-color: #FAF4ED; /* Card background */
+}
+
 /* Card Container */
 .card-container {
     display: flex;
@@ -26,7 +30,7 @@
     padding: 20px;
     border: 1px solid #CBAACB;
     border-radius: 15px;
-    background-color: #FAF4ED;
+    background-color: #FFFFFF;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
