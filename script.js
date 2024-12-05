@@ -1,3 +1,4 @@
+// Carousel Functionality Script
 const track = document.querySelector(".carousel-track");
 const slides = Array.from(document.querySelectorAll(".carousel-slide"));
 const prevBtn = document.querySelector(".carousel-btn.prev");
