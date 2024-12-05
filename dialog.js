@@ -60,7 +60,6 @@ function updateChapters() {
     } else if (subject === "Programming Fundamental") {
         chapters = ["Introduction to Programming", "Data Types", "Control Structures", "Functions"];
     }
-    // Add other subjects and chapters accordingly...
 
     // Populate chapters based on selected subject
     chapters.forEach((chapter) => {
@@ -76,41 +75,63 @@ function submitForm() {
     const semester = document.getElementById("semester").value;
     const subject = document.getElementById("subject").value;
     const chapter = document.getElementById("chapter").value;
-    const contentDisplay = document.getElementById("contentDisplay");
+    let contentBlockContainer = document.querySelector('.content-block');
 
     if (semester && subject && chapter) {
-        // Create content to display
-        const contentHTML = `
-      <div class="content-block">
-        <div class="content-info">
-            <h3>Semester ${semester} - ${subject} - ${chapter}</h3>
-            <p>
-            Here is the content for <strong>${chapter}</strong> from <strong>${subject}</strong> in Semester ${semester}.
-            You can access detailed notes, video lectures, and previous year question papers (PYQs) for better understanding.
-            </p>
-        </div>
-        <div class="card-container1">
-          <div class="card1">
-            <h4>YT Videos</h4>
-            <p>Watch curated video lectures for an in-depth understanding.</p>
-            <button class="card-button1"><a href="">Click Here</a></button>
-          </div>
-          <div class="card1">
-            <h4>PYQs</h4>
-            <p>Access previous year question papers to boost exam preparation.</p>
-            <button class="card-button1"><a href="">Click Here</a></button>
-          </div>
-          <div class="card1">
-            <h4>Notes</h4>
-            <p>Get detailed notes to enhance your learning experience.</p>
-            <button class="card-button1"><a href="">Click Here</a></button>
-          </div>
-        </div>
-      </div>
-    `;
+        // Create the HTML content for the content block
+        const newContentHTML = `
+            <div class="content-info">
+                <h3>Semester ${semester} - ${subject} - ${chapter}</h3>
+                <p>
+                    Here is the content for <strong>${chapter}</strong> from <strong>${subject}</strong> in Semester ${semester}.
+                    You can access detailed notes, video lectures, and previous year question papers (PYQs) for better understanding.
+                </p>
+                <div class="card-container1">
+                    <div class="card1">
+                        <h4>YT Videos</h4>
+                        <p>Watch curated video lectures for an in-depth understanding.</p>
+                        <button class="card-button1"><a href="ytvideos.html">Click Here</a></button>
+                    </div>
+                    <div class="card1">
+                        <h4>PYQs</h4>
+                        <p>Access previous year question papers to boost exam preparation.</p>
+                        <button class="card-button1"><a href="pyqs.html">Click Here</a></button>
+                    </div>
+                    <div class="card1">
+                        <h4>Notes</h4>
+                        <p>Get detailed notes to enhance your learning experience.</p>
+                        <button class="card-button1"><a href="notes.html">Click Here</a></button>
+                    </div>
+                </div>
+            </div>
+        `;
 
-        // Display the content in the content display section
-        contentDisplay.innerHTML = contentHTML;
+        // If the content block already exists, replace its content
+        if (contentBlockContainer) {
+            // Remove the slide-down class to reset the animation
+            contentBlockContainer.classList.remove('slide-down');
+
+            // Update the content
+            contentBlockContainer.innerHTML = newContentHTML;
+
+            // Re-add slide-down class after a brief delay to trigger the animation again
+            setTimeout(() => {
+                contentBlockContainer.classList.add('slide-down');
+            }, 10);
+        } else {
+            // If the content block does not exist, create and insert it
+            contentBlockContainer = document.createElement("div");
+            contentBlockContainer.classList.add('content-block');
+
+            contentBlockContainer.innerHTML = newContentHTML;
+
+            // Insert content-block after the button
+            const itContainer = document.querySelector('.it-container');
+            itContainer.insertAdjacentElement('afterend', contentBlockContainer);
+
+            // Add slide-down class to trigger animation
+            contentBlockContainer.classList.add('slide-down');
+        }
 
         // Close the modal after displaying the content
         closeDialog();
