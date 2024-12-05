@@ -9,52 +9,67 @@
 
 /* Navbar */
 .navbar {
-    background-color: #403C5C; /* Deep purple-gray background */
-    height: 70px; /* Standard height for navigation */
+    background-color: #403C5C;
+    /* Deep purple-gray background */
+    height: 90px;
+    /* Standard height for navigation */
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px; /* Added padding for spacing */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    padding: 0 50px;
+    /* Added padding for spacing */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow for depth */
 }
 
 .name {
-    font-size: 2rem; /* Increase font size to emphasize brand name */
+    font-size: 2rem;
+    /* Increase font size to emphasize brand name */
     font-weight: 800;
-    color: #D6CFE9; /* Light color matching the theme */
+    color: #D6CFE9;
+    /* Light color matching the theme */
     font-family: "Parkinsans", sans-serif;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px; /* Reduce gap for better spacing */
-    font-size: 1rem; /* Standardize font size for nav links */
+    gap: 30px;
+    /* Reduce gap for better spacing */
+    font-size: 1.2rem;
+    /* Standardize font size for nav links */
     font-weight: 600;
+    padding: 10px;
 }
 
 .navbar a {
-    color: #D6CFE9; /* Light lavender text to contrast the dark background */
+    color: #D6CFE9;
+    /* Light lavender text to contrast the dark background */
     text-decoration: none;
     font-family: "Parkinsans", sans-serif;
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+    transition: color 0.3s ease;
+    /* Smooth color transition on hover */
 }
 
 .navbar a:hover {
-    color: #C2B4E2; /* Softened lavender color for hover effect */
+    color: #C2B4E2;
+    /* Softened lavender color for hover effect */
 }
 
 .user-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 20px; /* Spacing to separate icon from nav links */
+    padding-left: 20px;
+    /* Spacing to separate icon from nav links */
 }
 
 .user-icon {
-    background-color: #D4C1EC; /* Soft lavender color */
-    color: #403C5C; /* Deep purple-gray for text */
+    background-color: #D4C1EC;
+    /* Soft lavender color */
+    color: #403C5C;
+    /* Deep purple-gray for text */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -63,11 +78,14 @@
     justify-content: center;
     font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow to match theme */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow to match theme */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .user-icon:hover {
-    background-color: #CBAACB; /* Darkened hover color */
-    color: #FFFFFF; /* White text on hover */
+    background-color: #CBAACB;
+    /* Darkened hover color */
+    color: #FFFFFF;
+    /* White text on hover */
 }
