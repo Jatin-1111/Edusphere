@@ -45,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             profileIcon.addEventListener('click', () => {
                 profileMenu.classList.toggle('show');
             });
+            
+            document.addEventListener('click', (e) => {
+                if (!profileMenu.contains(e.target) && e.target !== profileIcon) {
+                    profileMenu.classList.remove('show');
+                }
+            });
+            
         }
 
         // Set up logout functionality

@@ -17,18 +17,27 @@
     <!-- Navbar -->
     <nav class="navbar">
       <a href="index.html" class="name">EDUSPHERE</a>
-      <div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="content.html">Content</a></li>
-          <li><a id="loginLink" href="login.html">login</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="user-icon-container" id="userIconContainer">
-        <!-- The user icon will be dynamically inserted here -->
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="content.html">Content</a></li>
+        <li>
+          <a href="login.html" id="loginLink">Login</a>
+          <!-- Profile Icon with Dropdown Menu -->
+          <div class="profile-icon-container">
+            <div
+              id="profileIcon"
+              class="profile-icon"
+              style="display: none"
+            ></div>
+            <div id="profileMenu" class="profile-menu">
+              <a href="profile.html" id="profileButton">Profile</a>
+              <a href="#" id="logoutButton">Logout</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
     
     <div class="cont-cont">
